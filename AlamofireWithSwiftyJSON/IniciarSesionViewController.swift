@@ -7,17 +7,13 @@
 //
 
 import UIKit
-
+import Alamofire
 class IniciarSesionViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var usuarioTextField: UITextField!
-    @IBAction func iniciarSesionTapped(_ sender: Any) {
-     
-            self.performSegue(withIdentifier: "showTableSegue", sender: nil)
-        
-    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +25,40 @@ class IniciarSesionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func iniciarSesionTapped(_ sender: Any) {
+        let username = usuarioTextField.text
+        let pass = passwordTextField.text
+        let parameters: Parameters = [
+            "username" : username,
+            "password" : pass
+        ]
+        Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Users/login", method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON { response in
+            switch response.response?.statusCode {
+          
+            case (400?) :
+                print("400")
+                break;
+            case (200?) :
+                
+                if let json = response.result.value {
+                    print(response.response?.statusCode)
+                    if response.response?.statusCode == 200 {
+                        self.performSegue(withIdentifier: "listarSegue", sender: sender)
+                        
+                        print("JSON:\(json)")
+                    }
+                    
+                }
+                
+                break;
+            default:
+                print("fin")
+                break;
+            }
+        }
+        
+    }
+  
     /*
     // MARK: - Navigation
 
