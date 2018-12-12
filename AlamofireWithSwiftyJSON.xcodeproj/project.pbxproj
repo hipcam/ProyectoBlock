@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9DDC3A3821C01E8E000BB635 /* IniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDC3A3721C01E8E000BB635 /* IniciarSesionViewController.swift */; };
 		9DDC3A3A21C08C97000BB635 /* VerCertificadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDC3A3921C08C97000BB635 /* VerCertificadoViewController.swift */; };
+		9DDC3A3C21C1966C000BB635 /* Compania.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDC3A3B21C1966C000BB635 /* Compania.swift */; };
+		9DDC3A3E21C1967D000BB635 /* Participante.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDC3A3D21C1967D000BB635 /* Participante.swift */; };
+		9DDC3A4021C197FC000BB635 /* Certificado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDC3A3F21C197FC000BB635 /* Certificado.swift */; };
 		C688A13A1CBCF43E0054DD86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688A1391CBCF43E0054DD86 /* AppDelegate.swift */; };
 		C688A13C1CBCF43E0054DD86 /* ListarCertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688A13B1CBCF43E0054DD86 /* ListarCertViewController.swift */; };
 		C688A13F1CBCF43E0054DD86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C688A13D1CBCF43E0054DD86 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 		7E91E46690932B10EC815B9E /* Pods-AlamofireWithSwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireWithSwiftyJSON.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireWithSwiftyJSON/Pods-AlamofireWithSwiftyJSON.debug.xcconfig"; sourceTree = "<group>"; };
 		9DDC3A3721C01E8E000BB635 /* IniciarSesionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciarSesionViewController.swift; sourceTree = "<group>"; };
 		9DDC3A3921C08C97000BB635 /* VerCertificadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCertificadoViewController.swift; sourceTree = "<group>"; };
+		9DDC3A3B21C1966C000BB635 /* Compania.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compania.swift; sourceTree = "<group>"; };
+		9DDC3A3D21C1967D000BB635 /* Participante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participante.swift; sourceTree = "<group>"; };
+		9DDC3A3F21C197FC000BB635 /* Certificado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificado.swift; sourceTree = "<group>"; };
 		A5D53873610BFF555EB43FA8 /* Pods-AlamofireWithSwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireWithSwiftyJSON.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireWithSwiftyJSON/Pods-AlamofireWithSwiftyJSON.release.xcconfig"; sourceTree = "<group>"; };
 		C688A1361CBCF43E0054DD86 /* AlamofireWithSwiftyJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireWithSwiftyJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C688A1391CBCF43E0054DD86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,9 @@
 				C688A1451CBCF43E0054DD86 /* Info.plist */,
 				9DDC3A3721C01E8E000BB635 /* IniciarSesionViewController.swift */,
 				9DDC3A3921C08C97000BB635 /* VerCertificadoViewController.swift */,
+				9DDC3A3B21C1966C000BB635 /* Compania.swift */,
+				9DDC3A3D21C1967D000BB635 /* Participante.swift */,
+				9DDC3A3F21C197FC000BB635 /* Certificado.swift */,
 			);
 			path = AlamofireWithSwiftyJSON;
 			sourceTree = "<group>";
@@ -173,12 +182,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireWithSwiftyJSON/Pods-AlamofireWithSwiftyJSON-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/EVReflection/EVReflection.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EVReflection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -213,7 +224,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DDC3A3821C01E8E000BB635 /* IniciarSesionViewController.swift in Sources */,
+				9DDC3A4021C197FC000BB635 /* Certificado.swift in Sources */,
 				C688A13C1CBCF43E0054DD86 /* ListarCertViewController.swift in Sources */,
+				9DDC3A3E21C1967D000BB635 /* Participante.swift in Sources */,
+				9DDC3A3C21C1966C000BB635 /* Compania.swift in Sources */,
 				9DDC3A3A21C08C97000BB635 /* VerCertificadoViewController.swift in Sources */,
 				C688A13A1CBCF43E0054DD86 /* AppDelegate.swift in Sources */,
 			);

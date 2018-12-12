@@ -11,6 +11,7 @@ class ListarCertViewController: UIViewController {
 
     @IBOutlet var tblJSON: UITableView!
     var arrRes = [[String:AnyObject]]() //Array of dictionary
+    var scheduleArray = [Dictionary<String,String>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +25,31 @@ class ListarCertViewController: UIViewController {
                 if self.arrRes.count > 0 {
                     self.tblJSON.reloadData()
                 }
+               
+            }
+        
+        Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Participantes").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar1 = JSON(responseData.result.value!)
+                print(swiftyJsonVar1)
+              
+                if let jArray = swiftyJsonVar1.array {
+                    if let westHolidayArray = jArray[0].array {
+                        for person in westHolidayArray {
+                            if let user = person["username"].string,
+                                let pass = person["password"].string,
+                                let dni = person["dni"].string {
+                                let dict = ["user":user, "pass":pass, "dni": dni]
+                                print(dict)
+                            }
+                        }
+                    }
+                }
+       
             }
         }
     }
-
+    }
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "jsonCell")!
         var dict = arrRes[(indexPath as NSIndexPath).row]
@@ -41,9 +63,5 @@ class ListarCertViewController: UIViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrRes.count
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 }
-
