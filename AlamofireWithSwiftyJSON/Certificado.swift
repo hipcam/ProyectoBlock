@@ -13,7 +13,9 @@ class Certificado:EVNetworkingObject {
     public var id:NSNumber?
     public var departamento:String?
     public var motivo:String?
-    public var distrito:String?
+    public var provincia:String?
     public var idcompanhia:NSNumber?
     public var verifiacion:BooleanLiteralType?
+    public var cargo:String?
+    public var representante:String?
 }

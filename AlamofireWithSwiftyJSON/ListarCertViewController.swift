@@ -28,25 +28,15 @@ class ListarCertViewController: UIViewController {
                
             }
         
-        Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Participantes").responseJSON { (responseData) -> Void in
+            Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Certificados/1").responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar1 = JSON(responseData.result.value!)
                 print(swiftyJsonVar1)
               
-                if let jArray = swiftyJsonVar1.array {
-                    if let westHolidayArray = jArray[0].array {
-                        for person in westHolidayArray {
-                            if let user = person["username"].string,
-                                let pass = person["password"].string,
-                                let dni = person["dni"].string {
-                                let dict = ["user":user, "pass":pass, "dni": dni]
-                                print(dict)
-                            }
-                        }
-                    }
-                }
+                
        
             }
+                
         }
     }
     }
@@ -54,8 +44,6 @@ class ListarCertViewController: UIViewController {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "jsonCell")!
         var dict = arrRes[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = dict["nombreEmpresa"] as? String
-        print(dict["producciones"] as? String as Any)
-        print(dict["nombre"] as? String as Any)
         cell.detailTextLabel?.text = dict["motivo"] as? String
         return cell
     }
