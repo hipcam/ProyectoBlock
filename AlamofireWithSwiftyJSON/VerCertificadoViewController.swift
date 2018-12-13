@@ -9,6 +9,8 @@
 import UIKit
 import SDWebImage
 import Alamofire
+import MaterialComponents.MaterialCards
+
 class VerCertificadoViewController: UIViewController {
 
 
@@ -18,13 +20,13 @@ class VerCertificadoViewController: UIViewController {
     @IBOutlet weak var depaLabel: UILabel!
     @IBOutlet weak var motivoLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    var certid:Int?
+    var certid:NSNumber?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     
-        Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Certificados/1").validate().responseObject{ (response: DataResponse<Certificado>) in
+        Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Certificados/\(certid!)").validate().responseObject{ (response: DataResponse<Certificado>) in
             switch response.result {
             case .success:
 
@@ -32,8 +34,8 @@ class VerCertificadoViewController: UIViewController {
                         // That was all... You now have a User object with data
                         print("User: \(usuario)")
 
-                        self.cargoLabel.text = usuario.cargo
-                        self.representanteLabel.text = usuario.representante
+                        self.cargoLabel.text = usuario.cargoRepresentante
+                        self.representanteLabel.text = usuario.nombreRepresentante
                         self.provinciaLabel.text = usuario.provincia
                         self.depaLabel.text = usuario.departamento
                         self.motivoLabel.text = usuario.motivo

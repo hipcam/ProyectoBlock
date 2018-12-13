@@ -4,6 +4,24 @@ PODS:
     - Alamofire
     - EVReflection/Core
   - EVReflection/Core (5.5.5)
+  - MaterialComponents/Cards (72.1.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Ink (72.1.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Icons/Base (72.1.0)
+  - MaterialComponents/private/Icons/ic_check_circle (72.1.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Math (72.1.0)
+  - MaterialComponents/private/Shapes (72.1.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/ShadowElevations (72.1.0)
+  - MaterialComponents/ShadowLayer (72.1.0):
+    - MaterialComponents/ShadowElevations
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
@@ -12,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - EVReflection/Alamofire (= 5.5.5)
+  - MaterialComponents/Cards
   - SDWebImage
   - SwiftyJSON
 
@@ -19,15 +38,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - EVReflection
+    - MaterialComponents
     - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   EVReflection: f5acec65ca5591bcb654743156172e3f2cbf2257
+  MaterialComponents: ee6a2de8eb57c4264d557c6caebe92062c7ba252
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
 
-PODFILE CHECKSUM: 408b20ea75c3943f321e2a924211f950bda5beb0
+PODFILE CHECKSUM: 7367f3fcc4150ce4a7f9fcaeed53fe212f906358
 
 COCOAPODS: 1.5.2

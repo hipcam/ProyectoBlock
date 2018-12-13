@@ -4,27 +4,37 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire 4.xcscheme_^#shared#^_</key>
+		<key>Alamofire 6.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 		</dict>
-		<key>EVReflection.xcscheme_^#shared#^_</key>
+		<key>EVReflection 2.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 		</dict>
-		<key>Pods-AlamofireWithSwiftyJSON 4.xcscheme_^#shared#^_</key>
+		<key>MaterialComponents-MaterialIcons_ic_check_circle.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 		</dict>
-		<key>SDWebImage 2.xcscheme_^#shared#^_</key>
+		<key>MaterialComponents.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 		</dict>
-		<key>SwiftyJSON 4.xcscheme_^#shared#^_</key>
+		<key>Pods-AlamofireWithSwiftyJSON 6.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+		</dict>
+		<key>SDWebImage 4.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+		</dict>
+		<key>SwiftyJSON 6.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
