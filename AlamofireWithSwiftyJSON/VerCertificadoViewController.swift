@@ -20,13 +20,13 @@ class VerCertificadoViewController: UIViewController {
     @IBOutlet weak var depaLabel: UILabel!
     @IBOutlet weak var motivoLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    var certid:NSNumber?
+    var certid:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     
-        Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Certificados/\(certid!)").validate().responseObject{ (response: DataResponse<Certificado>) in
+        Alamofire.request("https://rest-api-revata-jrevata.c9users.io:8080/api/Certificados/1").validate().responseObject{ (response: DataResponse<Certificado>) in
             switch response.result {
             case .success:
 

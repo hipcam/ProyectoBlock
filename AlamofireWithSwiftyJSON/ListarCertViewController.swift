@@ -1,9 +1,6 @@
 //
 //  ListarCertViewController.swift
 //  AlamofireWithSwiftyJSON
-//
-
-//
 
 import UIKit
 import Alamofire
@@ -56,12 +53,11 @@ class ListarCertViewController: UIViewController{
          let certificado:Certificado = self.certificados[indexPath.row]
         if(certificado.idPropietario == "1"){
             cell.textLabel?.text =  certificado.motivo
-            cell.detailTextLabel?.text = certificado.idPropietario
+            cell.detailTextLabel?.text = certificado.departamento
         
         }
         return cell
     }
-    
     func countCertificates()->Int{
         let certificados = self.certificados
         var count = 0
@@ -72,6 +68,7 @@ class ListarCertViewController: UIViewController{
         }
         return count
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countCertificates()
@@ -79,7 +76,7 @@ class ListarCertViewController: UIViewController{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let certificado:Certificado = self.certificados[indexPath.row]
         self.performSegue(withIdentifier: "showCertificadosSegue", sender: certificado.idcertificados)
-        print(certificado.idcertificados as Any)
+        print("ESTO", certificado.idcertificados as Any)
         
     }
     
@@ -89,7 +86,7 @@ func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // Pass the selected object to the new view controller.
     if segue.identifier == "showCertificadosSegue" {
         if(sender != nil){
-            let id = sender as! NSNumber
+            let id = sender as! Int
             let viewController = segue.destination as! VerCertificadoViewController
             viewController.certid = id
         }else{
